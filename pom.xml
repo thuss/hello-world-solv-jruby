@@ -25,15 +25,15 @@
     </repositories>
 
     <pluginRepositories>
-	    <pluginRepository>
+	    <!-- <pluginRepository>
             <id>sonatype</id>
             <url>http://oss.sonatype.org/content/repositories/snapshots</url>
-        </pluginRepository>
+        </pluginRepository> -->
 	
-        <!-- <pluginRepository>
+        <pluginRepository>
             <id>saumya</id>
             <url>http://mojo.saumya.de</url>
-        </pluginRepository> -->
+        </pluginRepository>
     </pluginRepositories>
 
     <dependencies>
@@ -82,7 +82,8 @@
             <plugin>
                 <groupId>de.saumya.mojo</groupId>
                 <artifactId>jruby-maven-plugin</artifactId>
-                <version>0.22.0-SNAPSHOT</version>
+                <!-- <version>0.22.0-SNAPSHOT</version> -->
+                <version>0.20.0</version>
                 <configuration>
                     <generateJava>true</generateJava>
                     <rubyDirectory>src/main/code</rubyDirectory>
@@ -101,7 +102,7 @@
 
     <properties>
         <kata.version>1.02</kata.version>
-        <language.version>1.5.2</language.version>
+        <language.version>1.5.2.kata</language.version>
     </properties>
 
 </project>
