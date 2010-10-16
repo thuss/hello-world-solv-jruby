@@ -1,10 +1,9 @@
 require 'java'
 java_package 'org.codingkata.unit'
-java_import 'org.codingkata.unit.api.BaseKataSolution'
-java_import 'org.codingkata.IKataCommonSolution'
+java_import 'org.codingkata.unit.api.IKataSolution'
 
-class MyKata < BaseKataSolution
-  java_implements IKataCommonSolution
+class MyKata
+  java_implements IKataSolution
 
   java_signature 'String reply()'
   def reply

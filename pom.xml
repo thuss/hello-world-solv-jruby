@@ -6,15 +6,15 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.codingkata.unit</groupId>
     <artifactId>hello-world-solv-jruby</artifactId>
-    <version>1274199905</version>
+    <version>1283893728</version>
     <name>hello-world-jruby</name>
     <packaging>jar</packaging>
     <url>www.codingkata.org</url>
 
     <parent>
         <groupId>org.codingkata</groupId>
-        <artifactId>parent-solv-bundle</artifactId>
-        <version>1.4.0</version>
+        <artifactId>parent-solv</artifactId>
+        <version>1.5.0</version>
     </parent>
 
     <repositories>
@@ -25,11 +25,6 @@
     </repositories>
 
     <pluginRepositories>
-	    <!-- <pluginRepository>
-            <id>sonatype</id>
-            <url>http://oss.sonatype.org/content/repositories/snapshots</url>
-        </pluginRepository> -->
-	
         <pluginRepository>
             <id>saumya</id>
             <url>http://mojo.saumya.de</url>
@@ -69,7 +64,7 @@
             </resource>
         </resources>
 
-        <plugins>	
+        <plugins>
         <!-- Attempt #1: using jruby-maven-plugin
                          (http://github.com/mkristian/jruby-maven-plugins)
              This plugin is supposed to compile all .rb files to .class.
@@ -82,7 +77,6 @@
             <plugin>
                 <groupId>de.saumya.mojo</groupId>
                 <artifactId>jruby-maven-plugin</artifactId>
-                <!-- <version>0.22.0-SNAPSHOT</version> -->
                 <version>0.20.0</version>
                 <configuration>
                     <generateJava>true</generateJava>
@@ -97,11 +91,36 @@
                     </execution>
                 </executions>
             </plugin>
+
+        <!-- Attempt #2: calling jruby via Ant
+            Which class to use for compiling?
+        -->
+        <!--
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>compile</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <tasks>
+                                <java classname="WHICH CLASS?" failonerror="yes" dir="">
+                                    <arg value="${basedir}/src/main/code/org/codingkata/unit/MyKata.rb" />
+                                </java>
+                            </tasks>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            -->
         </plugins>
     </build>
 
     <properties>
-        <kata.version>1.02</kata.version>
+        <kata.version>1.1k</kata.version>
         <language.version>1.5.2.kata</language.version>
     </properties>
 
